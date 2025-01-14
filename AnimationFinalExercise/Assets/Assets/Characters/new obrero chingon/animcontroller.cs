@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterAnimationController : MonoBehaviour
@@ -11,6 +12,7 @@ public class CharacterAnimationController : MonoBehaviour
     public float movementSpeed = 2f; // Speed of character movement
     public float bigStepDistance = 3f; // Distance covered during a big step forward
     private bool isPerformingBigStep = false;
+    private bool isAttackingOrDodging = false; // Flag to check if the player is attacking or dodging
 
     void Start()
     {
@@ -25,6 +27,8 @@ public class CharacterAnimationController : MonoBehaviour
 
     void HandleMovement()
     {
+        if (isAttackingOrDodging) return; // Prevent movement if attacking or dodging
+
         float moveDirection = 0f;
 
         if (Input.GetKey(KeyCode.A))
@@ -56,11 +60,15 @@ public class CharacterAnimationController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetTrigger("DodgeHighAttack");
+            isAttackingOrDodging = true;
+            StartCoroutine(ResetAttackOrDodge(animator.GetCurrentAnimatorStateInfo(0).length));
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
             animator.SetTrigger("DodgeLowAttack");
+            isAttackingOrDodging = true;
+            StartCoroutine(ResetAttackOrDodge(animator.GetCurrentAnimatorStateInfo(0).length));
         }
 
         if (Input.GetKeyDown(KeyCode.H) && !isPerformingBigStep)
@@ -71,14 +79,16 @@ public class CharacterAnimationController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             animator.SetTrigger("LowQuickAttack");
+            isAttackingOrDodging = true;
+            StartCoroutine(ResetAttackOrDodge(animator.GetCurrentAnimatorStateInfo(0).length));
         }
 
         if (Input.GetKeyDown(KeyCode.N))
         {
             animator.SetTrigger("LowSlowAttack");
+            isAttackingOrDodging = true;
+            StartCoroutine(ResetAttackOrDodge(animator.GetCurrentAnimatorStateInfo(0).length));
         }
-
-      
     }
 
     private System.Collections.IEnumerator PerformBigStep()
@@ -127,7 +137,22 @@ public class CharacterAnimationController : MonoBehaviour
                     break;
             }
 
+            isAttackingOrDodging = true;
+            StartCoroutine(ResetAttackOrDodge(animator.GetCurrentAnimatorStateInfo(0).length));
+
             attackIndex = (attackIndex + 1) % 4; // Cycle through the sequence
         }
+    }
+
+    IEnumerator ResetAttackOrDodge(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        OnAttackOrDodgeEnd();
+    }
+
+    // This method should be called by animation events at the end of attack or dodge animations
+    public void OnAttackOrDodgeEnd()
+    {
+        isAttackingOrDodging = false;
     }
 }
