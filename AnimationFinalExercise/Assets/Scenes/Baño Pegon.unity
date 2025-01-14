@@ -838,6 +838,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2529253548029079024, guid: 87c5a5a4a578320468844714b63a2471,
         type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529253548029079024, guid: 87c5a5a4a578320468844714b63a2471,
+        type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -940,6 +945,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 683104447447453313, guid: 9b9f7d7831d730244abaec77f93131ac,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 683104447447453313, guid: 9b9f7d7831d730244abaec77f93131ac,
         type: 3}
       propertyPath: m_IsKinematic
