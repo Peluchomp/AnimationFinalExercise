@@ -80,10 +80,6 @@ public class animControllerOficinista : MonoBehaviour
             animator.SetTrigger("LowSlowAttack");
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            animator.SetTrigger("IsDead");
-        }
     }
 
     void PerformSlowAttack()

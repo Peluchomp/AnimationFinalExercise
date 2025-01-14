@@ -1175,6 +1175,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2469901047764233667}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87768cb7bc7f1014eb64a49c18d31f09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2529253548029079024}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87768cb7bc7f1014eb64a49c18d31f09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896961471645691598}
     - targetCorrespondingSourceObject: {fileID: 1889657945145093097, guid: 87768cb7bc7f1014eb64a49c18d31f09,
         type: 3}
       insertIndex: -1
@@ -1427,6 +1435,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   bigStepDistance: 3
+--- !u!54 &2529253548029079024
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584778774204210320}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &896961471645691598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584778774204210320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43886f8bc2179043ad00da9f1eef6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2589009092458320506}
 --- !u!1 &5293265524056684730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -861405314158159493, guid: 87768cb7bc7f1014eb64a49c18d31f09,
