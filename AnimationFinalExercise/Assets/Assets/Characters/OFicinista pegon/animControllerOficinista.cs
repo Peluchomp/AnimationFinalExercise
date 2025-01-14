@@ -29,7 +29,7 @@ public class animControllerOficinista : MonoBehaviour
     {
         float moveDirection = 0f;
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.L))
         {
             animator.SetBool("WalkingBackward", true);
             moveDirection = -1f; // Move backward
@@ -39,7 +39,7 @@ public class animControllerOficinista : MonoBehaviour
             animator.SetBool("WalkingBackward", false);
         }
 
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(KeyCode.J))
         {
             animator.SetBool("WalkingForward", true);
             moveDirection = 1f; // Move forward

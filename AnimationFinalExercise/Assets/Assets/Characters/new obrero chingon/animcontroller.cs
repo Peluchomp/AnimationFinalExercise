@@ -78,10 +78,7 @@ public class CharacterAnimationController : MonoBehaviour
             animator.SetTrigger("LowSlowAttack");
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            animator.SetTrigger("IsDead");
-        }
+      
     }
 
     private System.Collections.IEnumerator PerformBigStep()
